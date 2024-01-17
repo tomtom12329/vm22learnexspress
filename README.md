@@ -1,3 +1,9 @@
 # vm22learnexspress
 
-'node server.js'
+## install
+
+ `npm i`
+
+ ## run
+
+ `node server.js`
