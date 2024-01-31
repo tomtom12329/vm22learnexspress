@@ -21,18 +21,23 @@ app.get(`/form`, (req, res)=> {
   console.log(req.query)
   res.render(`form.njk`, req.query);
 });
-app.get(`/circle`, (req, res)=> {
-  console.log(req.query)
-  res.render(`circle.njk`, req.query);
-});
-app.post(`/circle`, (req, res)=> {
-  res.json(req.body);
-});
-app.get(`/circle`, (req, res)=> {
-  let area = Math.PI * req.body.radiuse
-  res.render(`circleAnswere.njk`, {r: req.body.radiuse, a: area });
+app.get('/circle', (req, res) => {
+  res.render('circle.njk');
 });
 
+
+app.post('/circle', (req, res) => {
+  if (!req.body.radius || isNaN(req.body.radius)) {
+    return res.status(400).send('Invalid radius value');
+  }
+
+  const radius = parseFloat(req.body.radius);
+  const area = Math.PI * radius * radius;
+  const circumference = 2 * Math.PI * radius;
+  const volume =  (4/3) * Math.PI * radius * radius * radius 
+
+  res.render('circleAnswer.njk', { r: radius, a: area, c: circumference, volume: volume });
+});
 
 
 app.listen(port, () => {
