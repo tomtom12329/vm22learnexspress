@@ -30,7 +30,7 @@ app.post(`/circle`, (req, res)=> {
 });
 app.get(`/circle`, (req, res)=> {
   let area = Math.PI * req.body.radiuse
-  res.render(`circleAswere.njk`, {r: req.body.radiuse, a: area });
+  res.render(`circleAnswere.njk`, {r: req.body.radiuse, a: area });
 });
 
 
