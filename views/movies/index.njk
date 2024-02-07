@@ -1,0 +1,10 @@
+{% extends "partials/layout.njk" %}
+{%block title%}Home{% endblock %}
+{% block content %}
+    <a href="/movies/add">Add</a>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
