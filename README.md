@@ -1,9 +1,9 @@
-# vm22learnexspress
+# vm22learnexpress
 
 ## install
 
- `npm i`
+`npm i`
 
- ## run
+## run
 
- `node server.js`
+`npm start`
